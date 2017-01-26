@@ -6,6 +6,12 @@ use Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Class User
+ * @package App
+ * @author Glen Hughes <glen.866@gmail.com>
+ * @date 26/01/2017
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -16,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password'
     ];
 
     /**
