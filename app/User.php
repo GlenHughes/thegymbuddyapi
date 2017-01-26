@@ -44,4 +44,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    /**
+     * Routines attached to this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function routines()
+    {
+        return $this->hasMany('App\Routines');
+    }
 }

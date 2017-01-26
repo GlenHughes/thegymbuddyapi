@@ -14,6 +14,13 @@ $api->version('v1', function (Router $api) {
         $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
     });
 
+    $api->group(['prefix' => 'api', 'middleware' => 'api.auth'], function(Router $api) {
+        $api->get('routine/{id}', 'App\\Api\\V1\\Controllers\\RoutinesController@show');
+        $api->post('routines/store', 'App\\Api\\V1\\Controllers\\RoutinesController@store');
+        $api->patch('routine/{id}', 'App\\Api\\V1\\Controllers\\RoutinesController@update');
+        $api->delete('routine/{id}', 'App\\Api\\V1\\Controllers\\RoutinesController@delete');
+    });
+
     $api->group(['middleware' => 'jwt.auth'], function(Router $api) {
         $api->get('protected', function() {
             return response()->json([
