@@ -9,7 +9,7 @@ class ForgotPasswordRequest extends FormRequest
 {
     public function rules()
     {
-        return Config::get('boilerplate.forgot_password.validation_rules');
+        return Config::get('thegymbuddy.forgot_password.validation_rules');
     }
 
     public function authorize()

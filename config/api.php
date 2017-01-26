@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'domain' => env('API_DOMAIN', null),
+    'domain' => env('API_DOMAIN', 'http://thegymbuddyapi.local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'name' => env('API_NAME', null),
+    'name' => env('API_NAME', 'TheGymBuddyAPI'),
 
     /*
     |--------------------------------------------------------------------------

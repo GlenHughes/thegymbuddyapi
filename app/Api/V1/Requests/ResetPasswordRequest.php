@@ -9,7 +9,7 @@ class ResetPasswordRequest extends FormRequest
 {
     public function rules()
     {
-        return Config::get('boilerplate.reset_password.validation_rules');
+        return Config::get('thegymbuddy.reset_password.validation_rules');
     }
 
     public function authorize()
