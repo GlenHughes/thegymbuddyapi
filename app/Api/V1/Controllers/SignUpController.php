@@ -11,6 +11,12 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class SignUpController extends Controller
 {
+    public function test()
+    {
+        return response()->json([
+            'status' => 'ok'
+        ], 201);
+    }
     public function signUp(SignUpRequest $request, JWTAuth $JWTAuth)
     {
         $user = new User($request->all());

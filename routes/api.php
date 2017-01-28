@@ -6,7 +6,7 @@ use Dingo\Api\Routing\Router;
 $api = app(Router::class);
 
 $api->version('v1', function (Router $api) {
-    $api->group(['prefix' => 'api/auth'], function(Router $api) {
+    $api->group(['prefix' => 'auth'], function(Router $api) {
         $api->post('signup', 'App\\Api\\V1\\Controllers\\SignUpController@signUp');
         $api->post('login', 'App\\Api\\V1\\Controllers\\LoginController@login');
 
@@ -14,7 +14,7 @@ $api->version('v1', function (Router $api) {
         $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
     });
 
-    $api->group(['prefix' => 'api', 'middleware' => 'api.auth'], function(Router $api) {
+    $api->group(['middleware' => 'api.auth'], function(Router $api) {
         $api->get('routine/{id}', 'App\\Api\\V1\\Controllers\\RoutinesController@show');
         $api->post('routines/store', 'App\\Api\\V1\\Controllers\\RoutinesController@store');
         $api->patch('routine/{id}', 'App\\Api\\V1\\Controllers\\RoutinesController@update');

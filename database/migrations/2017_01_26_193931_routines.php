@@ -16,8 +16,7 @@ class Routines extends Migration
         Schema::create('routines', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index();
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->timestamps();
             $table->text('monday');
             $table->text('tuesday');
             $table->text('wednesday');
